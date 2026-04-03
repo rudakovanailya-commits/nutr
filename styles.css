@@ -5,18 +5,18 @@
   --surface: rgba(255, 252, 255, .88);
   --surface-2: rgba(245, 236, 250, .95);
   --surface-inset: #f3e9f8;
-  --surface-elevated: #ffffff;
-  --text: #3d2f4a;
-  --muted: rgba(61, 47, 74, .74);
-  --muted-2: rgba(61, 47, 74, .48);
-  --border: rgba(160, 120, 195, .2);
-  --shadow: 0 20px 56px rgba(95, 65, 125, .09);
-  --shadow-card: 0 12px 40px rgba(120, 80, 140, .07);
+  --surface-elevated: lab(61.95% 33.69 -15.04);
+  --text: #b96c9c;
+  --muted: rgba(151, 93, 135, 0.74);
+  --muted-2: rgba(200, 113, 180, 0.48);
+  --border: rgba(152, 99, 199, 0.63);
+  --shadow: 0 20px 56px rgba(152, 118, 186, 0.893);
+  --shadow-card: 0 12px 40px rgba(202, 145, 192, 0.776);
 
   --accent: #9575c9;
   --accent-dim: rgba(149, 117, 201, .16);
   --accent-2: #d889b0;
-  --accent-2-dim: rgba(216, 137, 176, .16);
+  --accent-2-dim: rgba(253, 170, 212, 0.628);
   --accent-3: #c4a8e8;
   --ink: #2e2438;
   --ink-soft: #3d3048;
