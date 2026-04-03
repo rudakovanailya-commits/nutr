@@ -30,6 +30,9 @@
   --radius-sm: 10px;
 
   --container: 1140px;
+
+  /* Полноэкранный фон с пионами (лежит рядом со styles.css: assets/flowers.png) */
+  --page-bg-image: url("./assets/flowers.png");
 }
 
 *{ box-sizing: border-box; }
@@ -46,38 +49,54 @@ body{
   font-optical-sizing: auto;
   line-height: 1.55;
   letter-spacing: 0.02em;
-  background-color: transparent;
+  background-color: var(--bg-deep);
   color: var(--text);
   overflow-x: hidden;
   position: relative;
+  isolation: isolate;
 }
 
-/* Анимированный фон: нежный переход розовый → сиреневый (медленный «дыхание») */
+/* Слой 1: фото цветов на весь экран, cover, без повтора, фиксированное при скролле */
 body::before{
   content: "";
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(
-    118deg,
-    #fff5f7 0%,
-    #fdeef3 14%,
-    #f8e4ee 28%,
-    #f0e4fa 42%,
-    #e8e2fc 56%,
-    #efe6ff 68%,
-    #fceaf2 82%,
-    #fff6f9 100%
-  );
-  background-size: 400% 400%;
-  animation: bgPastelFlow 24s ease-in-out infinite;
+  background-color: var(--bg-deep);
+  background-image: var(--page-bg-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   pointer-events: none;
 }
 
-@keyframes bgPastelFlow{
-  0%{ background-position: 0% 50%; }
-  50%{ background-position: 100% 50%; }
-  100%{ background-position: 0% 50%; }
+/* Слой 2: лёгкая «молочная» вуаль + мягкое размытие фона для читаемости текста */
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 255, 0.52) 0%,
+    rgba(255, 250, 252, 0.48) 45%,
+    rgba(253, 246, 250, 0.54) 100%
+  );
+  backdrop-filter: blur(4px) saturate(1.05);
+  -webkit-backdrop-filter: blur(4px) saturate(1.05);
+}
+
+/* Декоративные блики под оверлеем не нужны — убираем лишнюю отрисовку */
+.page-bloom{
+  display: none;
+}
+
+@media (max-width: 768px){
+  body::before{
+    background-attachment: scroll;
+  }
 }
 
 /* Без multiply — он затемняет светлый фон. Лёгкая фактура, почти незаметная */
@@ -85,40 +104,10 @@ body::before{
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 25;
+  z-index: 3;
   opacity: .018;
   mix-blend-mode: normal;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-.page-bloom{
-  pointer-events: none;
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(90px);
-  z-index: 0;
-  opacity: .32;
-}
-.page-bloom--1{
-  width: min(560px, 95vw);
-  height: min(560px, 95vw);
-  top: -15%;
-  right: -12%;
-  background: radial-gradient(circle, rgba(255, 200, 220, .5), transparent 72%);
-  animation: bloomDrift 26s ease-in-out infinite;
-}
-.page-bloom--2{
-  width: min(480px, 85vw);
-  height: min(480px, 85vw);
-  bottom: 0%;
-  left: -15%;
-  background: radial-gradient(circle, rgba(210, 190, 255, .45), transparent 72%);
-  animation: bloomDrift 32s ease-in-out infinite reverse;
-}
-
-@keyframes bloomDrift{
-  0%, 100%{ transform: translate(0, 0) scale(1); }
-  50%{ transform: translate(24px, -18px) scale(1.06); }
 }
 
 a{ color: inherit; text-decoration: none; }
@@ -167,14 +156,14 @@ html.js-reveal-ready .reveal-on-scroll.is-visible{
 
 main#main{
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .container{
   width: min(var(--container), calc(100% - 36px));
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .skip-link{
@@ -195,7 +184,7 @@ main#main{
 .site-header{
   position: sticky;
   top: 0;
-  z-index: 30;
+  z-index: 40;
   backdrop-filter: blur(22px) saturate(1.05);
   background: rgba(255, 252, 254, .78);
   border-bottom: 1px solid var(--border);
@@ -314,29 +303,7 @@ main#main{
 .hero{
   padding: 52px 0 28px;
   position: relative;
-  overflow: hidden;
-  min-height: min(480px, 78vh);
 }
-
-/* WebGL-слой Antigravity (Three.js), под текстом */
-.antigravity-root{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  min-height: min(420px, 70vh);
-  pointer-events: none;
-}
-.antigravity-root canvas{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.antigravity-root--off{
-  display: none;
-}
-
 .hero::before{
   content: "";
   position: absolute;
@@ -347,15 +314,12 @@ main#main{
   background: linear-gradient(180deg, var(--accent-2), transparent);
   opacity: .5;
   pointer-events: none;
-  z-index: 1;
 }
 .hero-grid{
   display: grid;
   grid-template-columns: 1.05fr .95fr;
   gap: 28px;
   align-items: start;
-  position: relative;
-  z-index: 2;
 }
 .hero-badges{
   display: flex;
@@ -1175,8 +1139,7 @@ input:focus{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
   body::before{
-    animation: none;
-    background-position: 50% 50%;
+    background-position: center center;
   }
   html.js-reveal-ready .reveal-on-scroll:not(.is-visible){
     opacity: 1;
@@ -1185,8 +1148,6 @@ input:focus{
   .reveal-on-scroll{
     transition: none;
   }
-  .page-bloom--1,
-  .page-bloom--2,
   .hero-card::before{
     animation: none !important;
   }
