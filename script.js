@@ -2,6 +2,24 @@
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion) {
+    document.documentElement.classList.add("js-reveal-ready");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.08 }
+    );
+    $$(".reveal-on-scroll").forEach((el) => io.observe(el));
+  } else {
+    $$(".reveal-on-scroll").forEach((el) => el.classList.add("is-visible"));
+  }
+
   const burger = $(".burger");
   const mobileNav = $(".mobile-nav");
   if (burger && mobileNav) {
