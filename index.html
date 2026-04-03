@@ -61,125 +61,130 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <div class="container hero-grid">
-          <div class="hero-left">
-            <div class="hero-badges" aria-label="Ключевые преимущества">
-              <span class="badge">женщины 40+</span>
-              <span class="badge badge-soft">без жёстких диет и давления</span>
-              <span class="badge badge-accent">онлайн, бережно</span>
-            </div>
-
-            <div class="hero-main-row">
-              <figure class="hero-portrait">
-                <div class="hero-portrait-frame">
-                  <img
-                    src="./assets/portrait.png"
-                    alt="Наиля Рудакова — практикующий нутрициолог"
-                    width="640"
-                    height="640"
-                    decoding="async"
-                    fetchpriority="high"
-                  />
-                </div>
-              </figure>
-              <div class="hero-copy">
-                <h1 class="hero-title">
-                  Мягкий путь к женскому здоровью
-                  <span class="text-accent">и энергии после 40</span>
-                </h1>
-
-                <p class="hero-lead">
-                  Индивидуальные рекомендации по питанию, режиму и восстановлению ресурса. Работаю с теми, кто устал жить
-                  «на силе воли» и хочет мягко восстановить питание, энергию и связь с телом.
-                </p>
-
-                <div class="hero-actions">
-                  <a class="btn btn-primary" href="#contact">Записаться на консультацию</a>
-                  <a class="btn btn-ghost" href="#programs">Форматы и стоимость</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-mini">
-              <div class="mini-item">
-                <div class="mini-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" />
-                  </svg>
-                </div>
-                <div class="mini-text">
-                  <b>Персональная схема</b>
-                  <span>под ваш режим и предпочтения</span>
-                </div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" />
-                  </svg>
-                </div>
-                <div class="mini-text">
-                  <b>Поддержка</b>
-                  <span>коррекция и ответы по плану</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="trust-row" aria-label="Доверие">
-              <div class="trust-pill">
-                <span class="trust-nums">Онлайн 60 мин</span>
-                <span class="trust-label">разовая консультация</span>
-              </div>
-              <div class="trust-pill">
-                <span class="trust-nums">6–8 недель</span>
-                <span class="trust-label">индивидуальное сопровождение</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-right" aria-label="Форма предварительной заявки">
-            <div class="card hero-card">
+      <div class="hero-lead-bar" aria-label="Быстрая заявка">
+        <div class="hero-lead-bar-inner">
+          <div class="card hero-card hero-card--strip">
+            <div class="hero-strip-head">
               <h2 class="card-title">Заявка на консультацию</h2>
               <p class="card-sub">
                 Оставьте контакты — отвечу в рабочее время, пришлю анкету для предварительного разбора и согласуем удобный
                 слот.
               </p>
+            </div>
 
-              <form id="leadForm" class="form" autocomplete="on">
-                <label class="field">
-                  <span class="label">Имя</span>
-                  <input name="name" type="text" placeholder="Например, Елена" required />
-                </label>
+            <form id="leadForm" class="form form--hero-strip" autocomplete="on">
+              <label class="field">
+                <span class="label">Имя</span>
+                <input name="name" type="text" placeholder="Например, Елена" required />
+              </label>
 
-                <label class="field">
-                  <span class="label">Телефон или мессенджер</span>
-                  <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
-                </label>
+              <label class="field">
+                <span class="label">Телефон или мессенджер</span>
+                <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
+              </label>
 
-                <label class="field">
-                  <span class="label">Ваша цель (коротко)</span>
-                  <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
-                </label>
+              <label class="field">
+                <span class="label">Ваша цель (коротко)</span>
+                <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
+              </label>
 
+              <div class="hero-strip-submit">
                 <button class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
+              </div>
 
-                <p class="form-note">
-                  Нажимая кнопку, вы соглашаетесь на обработку данных. Отправка настраивается под ваш номер/бота.
-                </p>
-                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-              </form>
+              <p class="form-note form-note--strip">
+                Нажимая кнопку, вы соглашаетесь на обработку данных. Отправка настраивается под ваш номер/бота.
+              </p>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="hero" id="top">
+        <div class="container hero-body">
+          <div class="hero-main-row">
+            <div class="hero-copy">
+              <h1 class="hero-title">
+                Мягкий путь к женскому здоровью
+                <span class="text-accent">и энергии после 40</span>
+              </h1>
+
+              <p class="hero-lead">
+                Индивидуальные рекомендации по питанию, режиму и восстановлению ресурса. Работаю с теми, кто устал жить
+                «на силе воли» и хочет мягко восстановить питание, энергию и связь с телом.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#contact">Записаться на консультацию</a>
+                <a class="btn btn-ghost" href="#programs">Форматы и стоимость</a>
+              </div>
             </div>
 
-            <div class="hero-aside card aside-card" aria-label="Кому подходит">
-              <h3 class="aside-title">Подходит, если вы:</h3>
-              <ul class="check-list">
-                <li>хотите разобраться в симптомах и получить профессиональный взгляд;</li>
-                <li>есть конкретный запрос по питанию, режиму или энергии;</li>
-                <li>нужна поддержка без давления и «идеальных правил»;</li>
-                <li>готовы к онлайн-формату и бережному темпу изменений.</li>
-              </ul>
+            <figure class="hero-portrait">
+              <div class="hero-portrait-frame">
+                <img
+                  src="./assets/portrait.png"
+                  alt="Наиля Рудакова — практикующий нутрициолог"
+                  width="640"
+                  height="640"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </div>
+            </figure>
+          </div>
+
+          <div class="hero-badges" aria-label="Ключевые преимущества">
+            <span class="badge">женщины 40+</span>
+            <span class="badge badge-soft">без жёстких диет и давления</span>
+            <span class="badge badge-accent">онлайн, бережно</span>
+          </div>
+
+          <div class="hero-mini">
+            <div class="mini-item">
+              <div class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" />
+                </svg>
+              </div>
+              <div class="mini-text">
+                <b>Персональная схема</b>
+                <span>под ваш режим и предпочтения</span>
+              </div>
             </div>
+            <div class="mini-item">
+              <div class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" />
+                </svg>
+              </div>
+              <div class="mini-text">
+                <b>Поддержка</b>
+                <span>коррекция и ответы по плану</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trust-row" aria-label="Доверие">
+            <div class="trust-pill">
+              <span class="trust-nums">Онлайн 60 мин</span>
+              <span class="trust-label">разовая консультация</span>
+            </div>
+            <div class="trust-pill">
+              <span class="trust-nums">6–8 недель</span>
+              <span class="trust-label">индивидуальное сопровождение</span>
+            </div>
+          </div>
+
+          <div class="hero-aside card aside-card" aria-label="Кому подходит">
+            <h3 class="aside-title">Подходит, если вы:</h3>
+            <ul class="check-list">
+              <li>хотите разобраться в симптомах и получить профессиональный взгляд;</li>
+              <li>есть конкретный запрос по питанию, режиму или энергии;</li>
+              <li>нужна поддержка без давления и «идеальных правил»;</li>
+              <li>готовы к онлайн-формату и бережному темпу изменений.</li>
+            </ul>
           </div>
         </div>
       </section>
