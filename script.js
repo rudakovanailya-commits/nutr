@@ -63,6 +63,12 @@
         return;
       }
 
+      const consentEl = formEl.querySelector('input[name="consent"][type="checkbox"]');
+      if (consentEl && !consentEl.checked) {
+        showStatus(statusEl, "Отметьте согласие на обработку персональных данных.");
+        return;
+      }
+
       const tel = normalizeTel(contact);
       const message = goal
         ? `Спасибо, ${name}! Заявка получена. Цель: ${goal}. (демо) Тел: ${tel}`

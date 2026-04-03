@@ -73,27 +73,33 @@
             </div>
 
             <form id="leadForm" class="form form--hero-strip" autocomplete="on">
-              <label class="field">
-                <span class="label">Имя</span>
-                <input name="name" type="text" placeholder="Например, Елена" required />
-              </label>
+              <div class="hero-strip-fields">
+                <label class="field">
+                  <span class="label">Имя</span>
+                  <input name="name" type="text" placeholder="Например, Елена" required />
+                </label>
 
-              <label class="field">
-                <span class="label">Телефон или мессенджер</span>
-                <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
-              </label>
+                <label class="field">
+                  <span class="label">Телефон или мессенджер</span>
+                  <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
+                </label>
 
-              <label class="field">
-                <span class="label">Ваша цель (коротко)</span>
-                <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
-              </label>
+                <label class="field">
+                  <span class="label">Ваша цель (коротко)</span>
+                  <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
+                </label>
+              </div>
 
-              <div class="hero-strip-submit">
-                <button class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
+              <div class="hero-strip-consent-row">
+                <label class="field field-checkbox">
+                  <input type="checkbox" name="consent" value="yes" required />
+                  <span class="checkbox-label">Даю согласие на обработку моих персональных данных</span>
+                </label>
+                <button class="btn btn-primary" type="submit">Отправить заявку</button>
               </div>
 
               <p class="form-note form-note--strip">
-                Нажимая кнопку, вы соглашаетесь на обработку данных. Отправка настраивается под ваш номер/бота.
+                Отправка настраивается под ваш номер или мессенджер при публикации сайта.
               </p>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
@@ -166,14 +172,16 @@
             </div>
           </div>
 
-          <div class="trust-row" aria-label="Доверие">
-            <div class="trust-pill">
-              <span class="trust-nums">Онлайн 60 мин</span>
-              <span class="trust-label">разовая консультация</span>
-            </div>
-            <div class="trust-pill">
-              <span class="trust-nums">6–8 недель</span>
-              <span class="trust-label">индивидуальное сопровождение</span>
+          <div class="trust-row-wrap">
+            <div class="trust-row" aria-label="Доверие">
+              <div class="trust-pill">
+                <span class="trust-nums">Онлайн 60 мин</span>
+                <span class="trust-label">разовая консультация</span>
+              </div>
+              <div class="trust-pill">
+                <span class="trust-nums">6–8 недель</span>
+                <span class="trust-label">индивидуальное сопровождение</span>
+              </div>
             </div>
           </div>
 
@@ -560,6 +568,10 @@
                 <label class="field">
                   <span class="label">Цель</span>
                   <input name="goal" type="text" placeholder="Формат и цель: кратко" />
+                </label>
+                <label class="field field-checkbox">
+                  <input type="checkbox" name="consent" value="yes" required />
+                  <span class="checkbox-label">Даю согласие на обработку моих персональных данных</span>
                 </label>
                 <button class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
                 <p class="form-note">Демо-форма: ответ отобразится на странице. Подключите отправку в мессенджер или на почту при публикации.</p>
