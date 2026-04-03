@@ -60,53 +60,53 @@
       </div>
     </header>
 
-    <main id="main">
-      <div class="hero-lead-bar" aria-label="Быстрая заявка">
-        <div class="hero-lead-bar-inner">
-          <div class="card hero-card hero-card--strip">
-            <div class="hero-strip-head">
-              <h2 class="card-title">Заявка на консультацию</h2>
-              <p class="card-sub">
-                Оставьте контакты — отвечу в рабочее время, пришлю анкету для предварительного разбора и согласуем удобный
-                слот.
-              </p>
+    <section class="consult-section" aria-label="Быстрая заявка">
+      <div class="consult-section-inner">
+        <div class="card consult-card">
+          <div class="consult-head">
+            <h2 class="card-title">Заявка на консультацию</h2>
+            <p class="card-sub">
+              Оставьте контакты — отвечу в рабочее время, пришлю анкету для предварительного разбора и согласуем удобный
+              слот.
+            </p>
+          </div>
+
+          <form id="leadForm" class="form form--consult" autocomplete="on">
+            <div class="consult-fields">
+              <label class="field">
+                <span class="label">Имя</span>
+                <input name="name" type="text" placeholder="Например, Елена" required />
+              </label>
+
+              <label class="field">
+                <span class="label">Телефон или мессенджер</span>
+                <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
+              </label>
+
+              <label class="field">
+                <span class="label">Ваша цель (коротко)</span>
+                <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
+              </label>
             </div>
 
-            <form id="leadForm" class="form form--hero-strip" autocomplete="on">
-              <div class="hero-strip-fields">
-                <label class="field">
-                  <span class="label">Имя</span>
-                  <input name="name" type="text" placeholder="Например, Елена" required />
-                </label>
+            <div class="consult-consent-row">
+              <label class="field field-checkbox">
+                <input type="checkbox" name="consent" value="yes" required />
+                <span class="checkbox-label">Даю согласие на обработку моих персональных данных</span>
+              </label>
+              <button class="btn btn-primary" type="submit">Отправить заявку</button>
+            </div>
 
-                <label class="field">
-                  <span class="label">Телефон или мессенджер</span>
-                  <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
-                </label>
-
-                <label class="field">
-                  <span class="label">Ваша цель (коротко)</span>
-                  <input name="goal" type="text" placeholder="Например: консультация 60 мин / сопровождение / анализы" />
-                </label>
-              </div>
-
-              <div class="hero-strip-consent-row">
-                <label class="field field-checkbox">
-                  <input type="checkbox" name="consent" value="yes" required />
-                  <span class="checkbox-label">Даю согласие на обработку моих персональных данных</span>
-                </label>
-                <button class="btn btn-primary" type="submit">Отправить заявку</button>
-              </div>
-
-              <p class="form-note form-note--strip">
-                Отправка настраивается под ваш номер или мессенджер при публикации сайта.
-              </p>
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
-          </div>
+            <p class="form-note form-note--consult">
+              Отправка настраивается под ваш номер или мессенджер при публикации сайта.
+            </p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
+    </section>
 
+    <main id="main">
       <section class="hero" id="top">
         <div class="container hero-body">
           <div class="hero-main-row">
