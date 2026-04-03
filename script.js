@@ -2,7 +2,6 @@
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
-  // Header burger (mobile)
   const burger = $(".burger");
   const mobileNav = $(".mobile-nav");
   if (burger && mobileNav) {
@@ -10,7 +9,6 @@
       const isOpen = mobileNav.classList.toggle("is-open");
       burger.setAttribute("aria-expanded", String(isOpen));
     });
-    // Close when clicking a link
     $$(".mobile-nav a").forEach((a) => {
       a.addEventListener("click", () => {
         mobileNav.classList.remove("is-open");
@@ -19,12 +17,10 @@
     });
   }
 
-  // Footer year
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 
   function normalizeTel(str) {
-    // Keep digits and leading +
     const plus = str.trim().startsWith("+") ? "+" : "";
     const digits = str.replace(/[^\d]/g, "");
     return plus + digits;
@@ -35,7 +31,6 @@
     el.textContent = text;
   }
 
-  // Demo submit (no backend): show a success message
   function setupDemoForm(formEl, statusEl) {
     if (!formEl) return;
     formEl.addEventListener("submit", (e) => {
@@ -63,11 +58,10 @@
   setupDemoForm($("#leadForm"), $("#formStatus"));
   setupDemoForm($("#contactForm"), $("#contactStatus"));
 
-  // Smooth scrolling (native for modern browsers; fallback-ish)
-  $$("#main a[href^="#"], a[href^="#top"], .nav a").forEach((a) => {
+  $$('a[href^="#"]').forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href || href === "#") return;
     a.addEventListener("click", (e) => {
-      const href = a.getAttribute("href");
-      if (!href || href === "#") return;
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
@@ -75,4 +69,3 @@
     });
   });
 })();
-
