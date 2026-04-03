@@ -1,0 +1,78 @@
+(function () {
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+  // Header burger (mobile)
+  const burger = $(".burger");
+  const mobileNav = $(".mobile-nav");
+  if (burger && mobileNav) {
+    burger.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", String(isOpen));
+    });
+    // Close when clicking a link
+    $$(".mobile-nav a").forEach((a) => {
+      a.addEventListener("click", () => {
+        mobileNav.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Footer year
+  const year = $("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  function normalizeTel(str) {
+    // Keep digits and leading +
+    const plus = str.trim().startsWith("+") ? "+" : "";
+    const digits = str.replace(/[^\d]/g, "");
+    return plus + digits;
+  }
+
+  function showStatus(el, text) {
+    if (!el) return;
+    el.textContent = text;
+  }
+
+  // Demo submit (no backend): show a success message
+  function setupDemoForm(formEl, statusEl) {
+    if (!formEl) return;
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(formEl);
+      const name = String(fd.get("name") || "").trim();
+      const contact = String(fd.get("contact") || "").trim();
+      const goal = String(fd.get("goal") || "").trim();
+
+      if (!name || !contact) {
+        showStatus(statusEl, "Проверьте поля: имя и контакт обязательны.");
+        return;
+      }
+
+      const tel = normalizeTel(contact);
+      const message = goal
+        ? `Спасибо, ${name}! Заявка получена. Цель: ${goal}. (демо) Тел: ${tel}`
+        : `Спасибо, ${name}! Заявка получена. (демо) Тел: ${tel}`;
+
+      showStatus(statusEl, message);
+      formEl.reset();
+    });
+  }
+
+  setupDemoForm($("#leadForm"), $("#formStatus"));
+  setupDemoForm($("#contactForm"), $("#contactStatus"));
+
+  // Smooth scrolling (native for modern browsers; fallback-ish)
+  $$("#main a[href^="#"], a[href^="#top"], .nav a").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || href === "#") return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+

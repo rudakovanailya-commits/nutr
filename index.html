@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Нутрициолог для женщин 45+. Помогаю наладить питание, вернуть энергию и улучшить самочувствие без жестких диет." />
+    <title>Нутрициолог 45+ — питание без срывов</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="На главную">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">Нутрициолог 45+</span>
+            <span class="brand-sub">мягко, точно, по-настоящему</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Навигация">
+          <a href="#benefits">Польза</a>
+          <a href="#programs">Программа</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="#contact">Записаться</a>
+        </nav>
+
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger-lines" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav" aria-label="Мобильная навигация">
+        <a href="#benefits">Польза</a>
+        <a href="#programs">Программа</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#contact">Записаться</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <div class="hero-badges" aria-label="Ключевые преимущества">
+              <span class="badge">45+ и гормональные изменения</span>
+              <span class="badge badge-soft">без жестких диет</span>
+              <span class="badge badge-accent">с поддержкой</span>
+            </div>
+
+            <h1 class="hero-title">
+              Питание для женщин 45+:
+              <span class="text-accent">энергия, контроль аппетита</span>
+              и комфорт в теле
+            </h1>
+
+            <p class="hero-lead">
+              Помогаю наладить рацион и привычки так, чтобы вы чувствовали себя лучше уже в первые недели:
+              меньше тяги к сладкому, стабильнее энергия, яснее самочувствие.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Записаться на консультацию</a>
+              <a class="btn btn-ghost" href="#programs">Посмотреть программу</a>
+            </div>
+
+            <div class="hero-mini">
+              <div class="mini-item">
+                <div class="mini-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" />
+                  </svg>
+                </div>
+                <div class="mini-text">
+                  <b>Персональная схема</b>
+                  <span>под ваш режим и предпочтения</span>
+                </div>
+              </div>
+              <div class="mini-item">
+                <div class="mini-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" />
+                  </svg>
+                </div>
+                <div class="mini-text">
+                  <b>Поддержка</b>
+                  <span>коррекция и ответы по плану</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="trust-row" aria-label="Доверие">
+              <div class="trust-pill">
+                <span class="trust-nums">4–6 недель</span>
+                <span class="trust-label">до устойчивых результатов</span>
+              </div>
+              <div class="trust-pill">
+                <span class="trust-nums">Без подсчета калорий</span>
+                <span class="trust-label">в большинстве случаев</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-label="Форма предварительной заявки">
+            <div class="card hero-card">
+              <h2 class="card-title">Бесплатно: диагностика питания</h2>
+              <p class="card-sub">Оценим ваш текущий рацион и дадим 2-3 точечных шага на ближайшую неделю.</p>
+
+              <form id="leadForm" class="form" autocomplete="on">
+                <label class="field">
+                  <span class="label">Имя</span>
+                  <input name="name" type="text" placeholder="Например, Елена" required />
+                </label>
+
+                <label class="field">
+                  <span class="label">Телефон или мессенджер</span>
+                  <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
+                </label>
+
+                <label class="field">
+                  <span class="label">Ваша цель (коротко)</span>
+                  <input name="goal" type="text" placeholder="Например: меньше тяги к сладкому" />
+                </label>
+
+                <button class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
+
+                <p class="form-note">
+                  Нажимая кнопку, вы соглашаетесь на обработку данных. Отправка настраивается под ваш номер/бота.
+                </p>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+
+            <div class="hero-aside card aside-card" aria-label="Кому подходит">
+              <h3 class="aside-title">Подходит, если вы:</h3>
+              <ul class="check-list">
+                <li>замечаете изменения веса и аппетита после 40–45;</li>
+                <li>устали от «жестких диет» и срывов;</li>
+                <li>хотите понятный рацион без страданий;</li>
+                <li>нуждаетесь в спокойной поддержке и корректировках.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="benefits">
+        <div class="container">
+          <div class="section-head">
+            <h2>Почему вам станет легче</h2>
+            <p>Не про «идеальную фигуру», а про устойчивое самочувствие и привычки, которые работают именно для вашего возраста.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="feature">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z" />
+                  <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+              </div>
+              <h3>Тяга к сладкому становится тише</h3>
+              <p>Разбираем причину «качелей аппетита» и подбираем продукты/режим под вашу реальность.</p>
+            </article>
+
+            <article class="feature">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 2v4" />
+                  <path d="M12 18v4" />
+                  <path d="M4.93 4.93l2.83 2.83" />
+                  <path d="M16.24 16.24l2.83 2.83" />
+                  <path d="M2 12h4" />
+                  <path d="M18 12h4" />
+                  <path d="M4.93 19.07l2.83-2.83" />
+                  <path d="M16.24 7.76l2.83-2.83" />
+                </svg>
+              </div>
+              <h3>Энергия без провалов</h3>
+              <p>Стабилизируем приемы пищи и добавляем «правильные» опоры для дня: без изнурения.</p>
+            </article>
+
+            <article class="feature">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <h3>Устойчивый результат</h3>
+              <p>План корректируется по вашим ощущениям и обратной связи, чтобы не «срывать» процесс.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="programs">
+        <div class="container">
+          <div class="section-head">
+            <h2>Программа для женщин 45+</h2>
+            <p>Вы выбираете формат, а я подстраиваю рекомендации под ваш режим, аппетит и вкусы.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="plan">
+              <div class="plan-top">
+                <span class="plan-tag">Старт</span>
+                <h3>4 недели «Стабилизация»</h3>
+                <p class="plan-desc">Если хотите понять опоры питания и начать мягко менять рацион.</p>
+              </div>
+              <ul class="plan-list">
+                <li>диагностика рациона и целей</li>
+                <li>план меню-структуры на неделю</li>
+                <li>коррекция по обратной связи</li>
+                <li>чек-лист покупок</li>
+              </ul>
+              <div class="plan-price" aria-label="Стоимость">
+                <span class="price">от 9 900 ₽</span>
+                <span class="price-note">точная сумма после диагностики</span>
+              </div>
+              <a class="btn btn-primary btn-block" href="#contact">Хочу «Старт»</a>
+            </article>
+
+            <article class="plan plan-highlight">
+              <div class="plan-top">
+                <span class="plan-tag plan-tag-accent">Рекомендуем</span>
+                <h3>6 недель «Комфорт + контроль»</h3>
+                <p class="plan-desc">Для тех, кто хочет вернуть чувство контроля и стабильность.</p>
+              </div>
+              <ul class="plan-list">
+                <li>разбор привычек и «пусковых факторов»</li>
+                <li>меню-матрица под ваши любимые блюда</li>
+                <li>план на 6 недель (гибко)</li>
+                <li>сессии-активности и поддержка</li>
+              </ul>
+              <div class="plan-price" aria-label="Стоимость">
+                <span class="price">от 19 900 ₽</span>
+                <span class="price-note">оптимальный баланс цена/результат</span>
+              </div>
+              <a class="btn btn-primary btn-block" href="#contact">Выбрать «Комфорт»</a>
+            </article>
+
+            <article class="plan">
+              <div class="plan-top">
+                <span class="plan-tag">Индивидуально</span>
+                <h3>12 недель «Точка устойчивости»</h3>
+                <p class="plan-desc">Если есть хронический дискомфорт и нужен глубокий план.</p>
+              </div>
+              <ul class="plan-list">
+                <li>углубленная диагностика</li>
+                <li>план питания и режима</li>
+                <li>коррекции по ощущениям</li>
+                <li>долгосрочная стратегия привычек</li>
+              </ul>
+              <div class="plan-price" aria-label="Стоимость">
+                <span class="price">от 34 900 ₽</span>
+                <span class="price-note">после уточнения задач</span>
+              </div>
+              <a class="btn btn-primary btn-block" href="#contact">Хочу «Точку»</a>
+            </article>
+          </div>
+
+          <div class="timeline card">
+            <div class="timeline-head">
+              <h3>Как проходит работа</h3>
+              <p>Понятный темп и реальные корректировки, без «сделайте сами и удачи».</p>
+            </div>
+
+            <div class="timeline-steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <b>Диагностика</b>
+                  <span>разбираем рацион, сон, активность, симптомы и предпочтения.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <b>Планирование</b>
+                  <span>собираем меню-структуру и правила приема пищи.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <b>Поддержка</b>
+                  <span>корректируем по обратной связи и убираем «триггеры».</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <b>Устойчивость</b>
+                  <span>закрепляем привычки и учим поддерживать результат самостоятельно.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <div class="container">
+          <div class="section-head">
+            <h2>Отзывы клиенток</h2>
+            <p>Можно заменить на реальные отзывы после первых клиентов.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="quote">
+              <div class="quote-top">
+                <span class="avatar" aria-hidden="true"></span>
+                <div>
+                  <b>Елена, 47</b>
+                  <span class="quote-sub">программа «Стабилизация»</span>
+                </div>
+              </div>
+              <p class="quote-text">
+                «Перестала тянуть к сладкому вечером. Появилась понятная структура питания и спокойствие — без чувства вины.»
+              </p>
+              <div class="stars" aria-label="Оценка: 5 из 5">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+            </article>
+
+            <article class="quote">
+              <div class="quote-top">
+                <span class="avatar avatar-2" aria-hidden="true"></span>
+                <div>
+                  <b>Ольга, 52</b>
+                  <span class="quote-sub">«Комфорт + контроль»</span>
+                </div>
+              </div>
+              <p class="quote-text">
+                «Самое ценное — поддержка и корректировки. Рацион стал проще, а самочувствие — ровнее.»
+              </p>
+              <div class="stars" aria-label="Оценка: 5 из 5">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+            </article>
+
+            <article class="quote">
+              <div class="quote-top">
+                <span class="avatar avatar-3" aria-hidden="true"></span>
+                <div>
+                  <b>Наталья, 45</b>
+                  <span class="quote-sub">«Точка устойчивости»</span>
+                </div>
+              </div>
+              <p class="quote-text">
+                «Я наконец-то поняла, что и когда мне подходит. Ушли “качели” и стало легче соблюдать режим.»
+              </p>
+              <div class="stars" aria-label="Оценка: 5 из 5">
+                <span aria-hidden="true">★★★★★</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <h2>FAQ</h2>
+            <p>Частые вопросы перед началом работы.</p>
+          </div>
+
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Можно ли без подсчета калорий?</summary>
+              <div class="faq-body">
+                Да. В большинстве случаев мы опираемся на понятные порции/структуру приема пищи и качество продуктов, а не на постоянные расчеты.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Что если я “не люблю” здоровую еду?</summary>
+              <div class="faq-body">
+                Мы не ломаем привычки. Подбираем меню-матрицу под ваши любимые блюда: меняем состав, баланс и режим, чтобы питание стало комфортным.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Сколько времени нужно, чтобы почувствовать эффект?</summary>
+              <div class="faq-body">
+                Часто первые изменения в самочувствии и аппетите заметны в течение 1–3 недель, а устойчивость формируется в течение 4–6 недель (зависит от ситуации).
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Можно ли при особенностях здоровья?</summary>
+              <div class="faq-body">
+                Я подбираю рекомендации бережно. Если у вас есть диагнозы и/или назначенная терапия, мы учитываем ограничения и согласуем план с вашим врачом при необходимости.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Как быстро стартовать?</summary>
+              <div class="faq-body">
+                После заявки мы согласуем удобное время диагностики и подготовим стартовый план под ваш режим.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-left">
+              <h2>Запишитесь на консультацию</h2>
+              <p class="muted">
+                Оставьте заявку — отвечу в течение рабочего дня. Если удобнее, можно написать в мессенджер.
+              </p>
+
+              <div class="contact-chips" aria-label="Контакты">
+                <a class="chip" href="https://wa.me/79999999999" target="_blank" rel="noreferrer noopener">
+                  WhatsApp
+                </a>
+                <a class="chip" href="https://t.me/your_username" target="_blank" rel="noreferrer noopener">
+                  Telegram
+                </a>
+                <a class="chip chip-secondary" href="tel:+79999999999">Позвонить</a>
+              </div>
+
+              <div class="contact-proof card">
+                <b>Что вы получите после заявки</b>
+                <ul class="check-list">
+                  <li>короткую диагностику по вашему запросу</li>
+                  <li>подбор формата (Старт/Комфорт/Точка)</li>
+                  <li>понятный первый шаг на неделю</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="contact-right card">
+              <h3 class="card-title">Заявка</h3>
+              <form id="contactForm" class="form">
+                <label class="field">
+                  <span class="label">Имя</span>
+                  <input name="name" type="text" placeholder="Ваше имя" required />
+                </label>
+                <label class="field">
+                  <span class="label">Телефон или мессенджер</span>
+                  <input name="contact" type="tel" placeholder="+7 (___) ___-__-__" required />
+                </label>
+                <label class="field">
+                  <span class="label">Цель</span>
+                  <input name="goal" type="text" placeholder="К чему хотите прийти" />
+                </label>
+                <button class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
+                <p class="form-note">Сайт демонстрационный: отправка будет показана в интерфейсе.</p>
+                <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <b>Нутрициолог 45+</b>
+          </div>
+          <p class="footer-note">
+            Рекомендации по питанию не заменяют консультацию врача. При наличии заболеваний план согласуется индивидуально.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="#faq">FAQ</a>
+          <a href="#programs">Программа</a>
+          <a href="#contact">Записаться</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Нутрициолог 45+. Все права защищены.</span>
+        <span class="muted">Сделано в современном адаптивном дизайне.</span>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
