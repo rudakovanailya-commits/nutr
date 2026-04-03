@@ -335,40 +335,54 @@ main#main{
 }
 .mobile-nav.is-open{ display: block; }
 
-/* Полоса заявки: на всю ширину экрана, сразу под шапкой */
+/* Полоса заявки: фон на всю ширину окна; карточка уже и по центру, плотная сетка */
 .hero-lead-bar{
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 16px 0 20px;
+  padding: 12px 0 14px;
   background: linear-gradient(180deg, rgba(255, 248, 242, 0.97) 0%, rgba(252, 244, 236, 0.88) 100%);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 10px 36px rgba(100, 75, 60, 0.06);
 }
 .hero-lead-bar-inner{
-  width: min(920px, calc(100% - 36px));
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 28px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
 }
 .hero-card--strip{
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: min(820px, 100%);
+  margin-left: auto;
+  margin-right: auto;
   border-radius: var(--radius-lg);
   animation-delay: 0.08s;
+}
+.hero-card.hero-card--strip{
+  padding: 12px 16px 14px;
+}
+.hero-card--strip .card-title{
+  font-size: clamp(1.35rem, 2.8vw, 1.5rem);
+  margin-bottom: 4px;
+}
+.hero-card--strip .card-sub{
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.45;
 }
 .hero-strip-head{
   position: relative;
   z-index: 1;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 @media (min-width: 900px){
   .hero-strip-head{
     display: grid;
-    grid-template-columns: minmax(200px, 320px) 1fr;
-    gap: 20px 32px;
+    grid-template-columns: minmax(180px, 260px) 1fr;
+    gap: 12px 20px;
     align-items: end;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
   }
   .hero-strip-head .card-title{
     margin-bottom: 0;
@@ -379,13 +393,20 @@ main#main{
 }
 .form--hero-strip{
   display: grid;
-  gap: 14px;
+  gap: 10px;
   position: relative;
   z-index: 1;
 }
+.form--hero-strip .field{
+  gap: 5px;
+}
+.form--hero-strip input{
+  padding: 10px 12px;
+  font-size: 15px;
+}
 .hero-strip-fields{
   display: grid;
-  gap: 14px;
+  gap: 10px;
   grid-column: 1 / -1;
 }
 @media (min-width: 720px){
@@ -403,18 +424,22 @@ main#main{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 14px 20px;
+  gap: 10px 16px;
   grid-column: 1 / -1;
 }
 .hero-strip-consent-row .field-checkbox{
-  flex: 1 1 min(260px, 100%);
+  flex: 1 1 min(240px, 100%);
   margin: 0;
 }
 .hero-strip-consent-row .btn-primary{
   flex: 0 0 auto;
-  min-height: 48px;
-  padding-left: 22px;
-  padding-right: 22px;
+  min-height: 44px;
+  padding: 11px 18px;
+  font-size: 14px;
+}
+.hero-strip-consent-row .checkbox-label{
+  font-size: 13px;
+  line-height: 1.4;
 }
 @media (max-width: 640px){
   .hero-strip-consent-row{
